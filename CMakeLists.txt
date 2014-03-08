@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 2.6)
 project(enet C)
 
 option(USE_CRC32 "Whether to use CRC32 packet verification")
