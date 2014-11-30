@@ -72,5 +72,9 @@ include_directories(${ENET_INCLUDE_DIRS})
 
 add_library(${ENET_LIBRARY} STATIC ${ENET_SOURCES})
 
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    target_link_libraries(${ENET_LIBRARY} ws2_32 winmm)
+endif()
+
 set(ENET_LIBRARIES ${ENET_LIBRARY} CACHE INTERNAL "Enet libraries")
 
